@@ -193,6 +193,7 @@ The PID controller helps maintain the drone's roll and pitch stability during fl
 The simulation results demonstrate that the individual modules and their integrated operation perform as expected under the tested conditions. The system is therefore capable of improving **flight stability, obstacle awareness, and autonomous safety decision-making**.
 
 Overall, this project demonstrates how **control systems, sensor-based decision-making, simulation, and machine learning** can be combined to develop a more reliable autonomous drone system. Future work can focus on real-time hardware implementation, additional sensors, more advanced machine learning models, and testing under real-world flight conditions.
+
 ---
 # 9. REFERENCES
 
