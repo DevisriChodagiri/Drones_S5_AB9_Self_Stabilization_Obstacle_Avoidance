@@ -114,3 +114,80 @@ The major stages of the methodology are:
               |
               v
       FORWARD FLIGHT
+# 7. RESULTS
+
+The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was tested by evaluating the individual modules and their integrated behavior.
+
+The major modules evaluated during testing are:
+
+- PID-based self-stabilization
+- Machine Learning-based SAFE prediction
+- Machine Learning-based UNSAFE prediction
+- High-attitude / instability detection
+- Recovery controller
+- Obstacle detection
+- Obstacle avoidance
+- Return to forward flight
+- Complete drone simulation
+
+The results obtained from these modules are presented below.
+
+---
+
+## 7.1 PID SELF-STABILIZATION RESULT
+
+The PID controller was tested to verify the self-stabilization capability of the drone.
+
+The controller continuously monitors the drone's roll and pitch and compares the current attitude with the desired attitude. Based on the error, the PID controller generates a corrective response.
+
+### Figure 1: PID Stabilization Result
+
+**[ADD PID STABILIZATION SCREENSHOT HERE]**
+
+**File:** `PID_Stabilization_Result.png`
+
+> **Figure 1:** PID-based self-stabilization result.
+
+### Observation
+
+The PID controller reduces the deviation between the desired and current attitude of the drone.
+
+The stabilization mechanism continuously provides corrective action to maintain the drone closer to its desired orientation.
+
+**[ADD SPECIFIC OBSERVATION FROM THE FINAL SCREENSHOT HERE]**
+
+---
+
+## 7.2 MACHINE LEARNING - SAFE PREDICTION
+
+The Logistic Regression model was tested using flight parameters consisting of:
+
+- Distance
+- Speed
+- Roll
+- Pitch
+
+The model predicts whether the given flight condition is SAFE or UNSAFE.
+
+### Figure 2: SAFE Prediction Result
+
+**[ADD SAFE ML SCREENSHOT HERE]**
+
+**File:** `ml_prediction_safe.png`
+
+> **Figure 2:** Machine Learning prediction for a SAFE flight condition.
+
+### Test Input
+
+| Parameter | Value |
+|---|---:|
+| Distance | 50 |
+| Speed | 5 |
+| Roll | 5 |
+| Pitch | 6 |
+
+### Prediction
+
+```text
+Prediction: 1
+RESULT: SAFE
