@@ -109,6 +109,7 @@ The complete system operates through the following sequence:
    If an obstacle is detected, the drone enters avoidance mode.
 
 8. **Return to Forward Flight**
+   
    After the obstacle is cleared, the drone returns to forward flight.
 
    
