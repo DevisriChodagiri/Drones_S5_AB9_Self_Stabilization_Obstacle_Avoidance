@@ -1,22 +1,18 @@
-# Autonomous Self-Stabilizing Drone with Obstacle Avoidance
-
-<!-- ========================================================= -->
-<!--                     AMRITA LOGO                           -->
-<!-- ========================================================= -->
+# AUTONOMOUS SELF-STABILIZING DRONE WITH OBSTACLE AVOIDANCE
 
 <p align="center">
-  <img src="results/amrita_logo.png" alt="Amrita Vishwa Vidyapeetham Logo" width="180">
+  <img src="./results/amrita_logo.png" alt="Amrita Vishwa Vidyapeetham Logo" width="200">
 </p>
 
-<p align="center">
-  <b>AMRITA VISHWA VIDYAPEETHAM</b><br>
-  Coimbatore, Tamil Nadu<br>
-  Department of Computer Science and Engineering
-</p>
+<h3 align="center">
+AMRITA VISHWA VIDYAPEETHAM<br>
+Coimbatore, Tamil Nadu<br>
+Department of Computer Science and Engineering
+</h3>
 
 ---
 
-# Project Report
+# PROJECT REPORT
 
 ## Project Title
 
@@ -24,212 +20,123 @@
 
 ---
 
-## Team Members
+## Team Details
 
-| S.No | Name | Roll Number | Email |
-|------|------|-------------|-------|
-| 1 | Devisri | CB.SC.U4AIE24163 | **[Add Email]** |
-| 2 | Monisha | CB.SC.U4AIE24157 | **[Add Email]** |
-| 3 | Myagi | CB.SC.U4AIE24143 | **[Add Email]** |
+| S.No. | Name | Roll Number | Email |
+|---|---|---|---|
+| 1 | Devisri | CB.SC.U4AIE24163 | **[ADD EMAIL]** |
+| 2 | Monisha | CB.SC.U4AIE24157 | **[ADD EMAIL]** |
+| 3 | Myagi | CB.SC.U4AIE24143 | **[ADD EMAIL]** |
 
 **Team Number:** 2
 
 ---
 
-# Abstract
+# 1. Abstract
 
-Autonomous drones require reliable flight stabilization, obstacle detection, and safety mechanisms to operate effectively in dynamic environments. An unstable drone can experience excessive roll or pitch angles, which may result in loss of control or collision with obstacles.
+Autonomous drones require reliable stabilization, environmental sensing, obstacle detection, and safety mechanisms to operate effectively in dynamic environments. A drone that experiences excessive roll or pitch deviation may become unstable and potentially collide with obstacles or lose control.
 
-This project presents an autonomous self-stabilizing drone system that combines PID-based attitude stabilization, obstacle detection, obstacle avoidance, Machine Learning-based flight safety prediction, and an automatic recovery controller.
+This project presents an autonomous self-stabilizing drone system that integrates PID-based attitude stabilization, ultrasonic obstacle detection, obstacle avoidance, Machine Learning-based flight safety prediction, high-attitude detection, and an automatic recovery controller.
 
-The drone's attitude is monitored using roll and pitch information obtained from an IMU-based sensing system. A PID controller is used to reduce the error between the desired and current orientation and maintain stable flight. An ultrasonic sensor is used to detect obstacles based on distance measurements.
+The drone's orientation is monitored using roll and pitch measurements obtained from an IMU-based sensing system. A PID controller is used to minimize the error between the desired and current attitude and maintain stable flight. An ultrasonic sensor is used to determine the distance between the drone and nearby obstacles.
 
-In addition, a Logistic Regression Machine Learning model is used to classify the current flight condition as either SAFE or UNSAFE based on parameters such as distance, speed, roll, and pitch. When an unsafe attitude condition is detected, a recovery controller is activated to gradually bring the drone back toward a stable orientation.
+A Logistic Regression model is incorporated as a Machine Learning-based safety classifier. The model uses distance, speed, roll, and pitch as input features and predicts whether the current flight condition is SAFE or UNSAFE. When excessive attitude deviation is detected, a recovery controller is activated to gradually bring the drone toward a stable orientation.
 
-The system was implemented and evaluated using MATLAB/Simulink and Python-based Machine Learning components. The experimental results demonstrate stabilization, safety classification, recovery from unstable conditions, obstacle avoidance, and return to forward flight.
-
----
-
-# 1. Introduction
-
-Unmanned Aerial Vehicles (UAVs), commonly known as drones, are increasingly used in surveillance, agriculture, delivery, inspection, disaster management, and autonomous navigation.
-
-For autonomous operation, a drone must maintain its orientation while continuously responding to changes in its environment. Two important challenges are:
-
-1. Maintaining stable flight.
-2. Detecting and avoiding obstacles.
-
-A drone may become unstable when its roll or pitch angle deviates significantly from the desired orientation. Without an appropriate stabilization mechanism, such deviations can lead to loss of control.
-
-Similarly, when an obstacle appears in the drone's path, the drone must detect it and change its motion accordingly.
-
-This project addresses these challenges by integrating multiple control and decision-making components into a single autonomous drone framework.
-
-The proposed system consists of:
-
-- IMU-based attitude monitoring
-- PID stabilization
-- Ultrasonic obstacle detection
-- Obstacle avoidance
-- Machine Learning-based safety classification
-- High-attitude detection
-- Automatic recovery control
-- Return-to-forward-flight mechanism
+The complete system was developed and evaluated using MATLAB/Simulink and Python-based Machine Learning components. The results demonstrate the working of stabilization, safety classification, high-attitude detection, recovery, obstacle avoidance, and return-to-forward-flight mechanisms.
 
 ---
 
-# 2. Problem Statement
+# 2. Introduction
 
-Autonomous drones must maintain stable flight while navigating through environments containing potential obstacles. Sudden changes in orientation or the presence of obstacles can cause unsafe flight conditions.
+Unmanned Aerial Vehicles (UAVs), commonly known as drones, are increasingly being used in applications such as surveillance, agriculture, infrastructure inspection, delivery, disaster management, mapping, and autonomous navigation.
 
-Therefore, the objective of this project is to develop a drone control framework that can:
+For autonomous operation, a drone must continuously maintain its orientation while responding to changes in its environment. Two major challenges in autonomous drone operation are maintaining flight stability and avoiding obstacles.
 
-- Maintain stable roll and pitch.
-- Detect unsafe flight conditions.
-- Predict whether the current condition is SAFE or UNSAFE.
-- Detect obstacles.
-- Avoid obstacles.
-- Recover automatically from unstable attitudes.
-- Resume forward flight after the obstacle is cleared.
+Drone stability is commonly described using attitude parameters such as roll, pitch, and yaw. In this project, roll and pitch are primarily considered for attitude monitoring and stabilization.
+
+A drone can become unstable when its current attitude deviates significantly from its desired attitude. A control mechanism is therefore required to continuously calculate the error and apply corrective action.
+
+PID controllers are widely used for such control applications because they respond to current error, accumulated error, and rate of change of error [2].
+
+In addition to stabilization, autonomous drones must be capable of detecting obstacles in their flight path. Distance measurements obtained from an ultrasonic sensor can be used to determine whether an obstacle is sufficiently close to require avoidance.
+
+Machine Learning can further enhance autonomous safety by learning patterns associated with safe and unsafe flight conditions. In this project, Logistic Regression is used as a binary classifier for predicting the safety condition of the drone.
+
+The proposed system therefore combines classical control, sensor-based perception, Machine Learning, and recovery mechanisms into a single autonomous drone framework.
 
 ---
 
-# 3. Objectives
+# 3. Problem Statement
 
-The main objectives of the project are:
+An autonomous drone must maintain stable flight while navigating through an environment containing potential obstacles.
 
-1. To develop a PID-based drone stabilization system.
-2. To monitor the roll and pitch angles of the drone.
-3. To detect high-attitude and unstable flight conditions.
+Sudden changes in orientation may result in unsafe flight conditions, while obstacles in the drone's path may cause collisions.
+
+Therefore, this project aims to develop a drone control system capable of:
+
+- Maintaining stable roll and pitch.
+- Detecting unstable or high-attitude conditions.
+- Predicting whether a flight condition is SAFE or UNSAFE.
+- Detecting obstacles.
+- Avoiding detected obstacles.
+- Recovering automatically from unstable attitudes.
+- Returning safely to forward flight.
+
+---
+
+# 4. Objectives
+
+The main objectives of this project are:
+
+1. To implement PID-based stabilization for drone attitude control.
+2. To monitor the roll and pitch of the drone.
+3. To detect high-attitude and unstable conditions.
 4. To develop a Machine Learning model for flight safety prediction.
 5. To classify flight conditions as SAFE or UNSAFE.
-6. To detect obstacles using distance measurements.
-7. To implement an obstacle avoidance controller.
-8. To develop an automatic recovery controller.
-9. To safely return the drone to forward flight after recovery or obstacle avoidance.
+6. To detect obstacles using ultrasonic distance measurements.
+7. To implement an obstacle avoidance mechanism.
+8. To implement an automatic recovery controller.
+9. To return the drone to forward flight after obstacle avoidance.
 10. To evaluate the complete system using simulation and experimental results.
 
 ---
 
-# 4. Background
+# 5. Background and Related Work
 
-## 4.1 Drone Stability
+## 5.1 Autonomous Drone Control
 
-Drone stability refers to the ability of the drone to maintain its desired orientation despite disturbances or changes in its motion.
+Autonomous drone systems require multiple control layers to maintain stable flight and perform navigation tasks.
 
-The primary attitude parameters considered in this project are:
+Control systems are responsible for maintaining the drone's desired attitude, while perception systems provide information about the surrounding environment.
 
-- Roll
-- Pitch
+Research in UAV control has investigated PID controllers, model-based control, adaptive control, and intelligent control approaches.
 
-The desired attitude is compared with the current attitude, and the resulting error is used by the PID controller to calculate the required correction.
+The base paper selected for this project is provided in the References section.
 
----
-
-## 4.2 Roll
-
-Roll represents rotation around the longitudinal axis of the drone.
-
-A positive or negative roll indicates that the drone is tilting toward one side.
+**Base Paper: [ADD BASE PAPER HERE]**
 
 ---
 
-## 4.3 Pitch
+## 5.2 PID-Based Stabilization
 
-Pitch represents rotation around the lateral axis of the drone.
+PID control is a commonly used approach for maintaining the desired attitude of a dynamic system.
 
-It indicates whether the drone is tilting forward or backward.
+The controller uses three components:
 
----
+- Proportional control
+- Integral control
+- Derivative control
 
-## 4.4 IMU
-
-An Inertial Measurement Unit (IMU) provides information about the motion and orientation of the drone.
-
-The project considers an MPU6050-based sensing system for obtaining attitude information.
-
-The sensor contains:
-
-- 3-axis accelerometer
-- 3-axis gyroscope
-
-Together, these measurements can be used to estimate the drone's orientation.
+The combination allows the controller to respond to present error, accumulated error, and changes in error.
 
 ---
 
-## 4.5 Ultrasonic Sensor
+## 5.3 Machine Learning for Safety Prediction
 
-An ultrasonic sensor measures the distance between the drone and an obstacle.
+Machine Learning can be used to identify patterns in flight data and classify different operating conditions.
 
-The sensor emits an ultrasonic pulse and measures the time taken for the reflected signal to return.
-
-The distance can be calculated as:
-
-$$
-d = \frac{v t}{2}
-$$
-
-where:
-
-- $d$ = distance to obstacle
-- $v$ = speed of sound
-- $t$ = round-trip travel time
-
-The division by 2 is required because the ultrasonic signal travels to the obstacle and back.
-
----
-
-# 5. Proposed Methodology
-
-The proposed system consists of several interconnected modules.
+In this project, Logistic Regression is used because the problem is formulated as a binary classification task:
 
 ```text
-                    ┌─────────────────────┐
-                    │     Drone Model     │
-                    └──────────┬──────────┘
-                               │
-                    ┌──────────▼──────────┐
-                    │   Sensor System     │
-                    │                     │
-                    │ IMU + Ultrasonic    │
-                    └──────────┬──────────┘
-                               │
-                ┌──────────────▼──────────────┐
-                │     Flight Monitoring       │
-                │                             │
-                │ Distance / Speed / Roll     │
-                │ Pitch                       │
-                └──────────────┬──────────────┘
-                               │
-                 ┌─────────────▼─────────────┐
-                 │    Safety Prediction      │
-                 │                           │
-                 │   Logistic Regression     │
-                 └─────────────┬─────────────┘
-                               │
-                       ┌───────▼───────┐
-                       │ Decision Unit │
-                       └───┬───────┬───┘
-                           │       │
-                         SAFE    UNSAFE
-                           │       │
-                           │   ┌───▼──────────┐
-                           │   │   Recovery   │
-                           │   │  Controller  │
-                           │   └──────────────┘
-                           │
-                  ┌────────▼────────┐
-                  │ Obstacle Check  │
-                  └────────┬────────┘
-                           │
-                    Obstacle detected
-                           │
-                  ┌────────▼────────┐
-                  │ Obstacle        │
-                  │ Avoidance       │
-                  └────────┬────────┘
-                           │
-                  ┌────────▼────────┐
-                  │ Return to       │
-                  │ Forward Flight  │
-                  └─────────────────┘
+SAFE
+UNSAFE
