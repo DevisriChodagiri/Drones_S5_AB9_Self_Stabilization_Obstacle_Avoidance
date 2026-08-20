@@ -176,3 +176,39 @@ The experimental and simulation results demonstrate that the proposed system can
 - Integrate all the modules into an autonomous flight-control framework.
 
 Overall, the results indicate that the proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** provides a combined approach for improving drone stability, obstacle awareness, and flight safety.
+---
+# 8. CONCLUSION
+
+The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was successfully designed and evaluated using MATLAB/Simulink and machine learning techniques. The system combines **PID-based attitude stabilization, ultrasonic-based obstacle detection, obstacle avoidance, recovery control, and Logistic Regression-based safety prediction** into a unified autonomous flight-control framework.
+
+The PID controller helps maintain the drone's roll and pitch stability during flight, while the ultrasonic sensor enables the system to detect obstacles and initiate appropriate avoidance actions. When significant attitude deviations occur, the recovery controller is activated to bring the drone back toward a stable condition. In addition, the Logistic Regression model classifies the current flight condition as **SAFE or UNSAFE** based on important flight parameters such as distance, speed, roll, and pitch.
+
+The simulation results demonstrate that the individual modules and their integrated operation perform as expected under the tested conditions. The system is therefore capable of improving **flight stability, obstacle awareness, and autonomous safety decision-making**.
+
+Overall, this project demonstrates how **control systems, sensor-based decision-making, simulation, and machine learning** can be combined to develop a more reliable autonomous drone system. Future work can focus on real-time hardware implementation, additional sensors, more advanced machine learning models, and testing under real-world flight conditions.
+---
+# 9. REFERENCES
+
+1. López-Sánchez, I., & Moreno-Valenzuela, J. (2023).  
+   **PID Control of Quadrotor UAVs: A Survey.**  
+   *Annual Reviews in Control, 56, 100900.*  
+   [Paper Link](https://doi.org/10.1016/j.arcontrol.2023.100900)
+
+2. Sun, X., & Yang, J. (2023).  
+   **Design of a Quadcopter Based on Ultrasonic Obstacle Avoidance.**  
+   *Journal of Hebei University of Water Resources and Electric Engineering.*  
+   [Paper Link](https://xuebao.hbwe.edu.cn/EN/10.16046/j.cnki.issn2096-5680.2023.03.002)
+
+3. Lotufo, M. A., Colangelo, L., Perez-Montenegro, C. N., Canuto, E., & Novara, C. (2019).  
+   **UAV Quadrotor Attitude Control: An ADRC-EMC Combined Approach.**  
+   *Control Engineering Practice, 84, 13–22.*  
+   [Paper Link](https://doi.org/10.1016/j.conengprac.2018.11.002)
+
+4. López-Sánchez, I., & Moreno-Valenzuela, J. (2019).  
+   **Position and Attitude Control of Multi-Rotor Aerial Vehicles: A Survey.**  
+   *Annual Reviews in Control.*  
+   [Paper Link](https://doi.org/10.1016/j.arcontrol.2019.03.001)
+
+5. **Design of Rules for In-Flight Non-Parametric Tuning of PID Controllers for Unmanned Aerial Vehicles.** (2019).  
+   *Journal of the Franklin Institute.*  
+   [Paper Link](https://doi.org/10.1016/j.jfranklin.2018.10.015)
