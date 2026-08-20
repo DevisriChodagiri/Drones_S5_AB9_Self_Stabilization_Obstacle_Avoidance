@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="<img width="441" height="114" alt="logo-branding-amrita-universiy-2024" src="https://github.com/user-attachments/assets/7d43240e-f53d-4f6c-bf59-05c12542abce" />
+" width="250">
+</p>
 # AUTONOMOUS SELF-STABILIZING DRONE WITH OBSTACLE AVOIDANCE
 
 <p align="center">
