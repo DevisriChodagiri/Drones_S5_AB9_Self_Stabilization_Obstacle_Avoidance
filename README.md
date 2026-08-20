@@ -182,6 +182,7 @@ The experimental and simulation results demonstrate that the proposed system can
 - Integrate all the modules into an autonomous flight-control framework.
 
 Overall, the results indicate that the proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** provides a combined approach for improving drone stability, obstacle awareness, and flight safety.
+
 ---
 # 8. CONCLUSION
 
