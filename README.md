@@ -114,6 +114,7 @@ The major stages of the methodology are:
               |
               v
       FORWARD FLIGHT
+---
 # 7. RESULTS
 
 The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was tested by evaluating the individual modules and their integrated behavior.
