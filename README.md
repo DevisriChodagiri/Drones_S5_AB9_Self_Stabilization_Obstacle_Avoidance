@@ -138,5 +138,112 @@ Machine Learning can be used to identify patterns in flight data and classify di
 In this project, Logistic Regression is used because the problem is formulated as a binary classification task:
 
 ```text
+## 6.1 SENSOR MONITORING
+
+The drone system continuously monitors its flight condition using different parameters.
+
+The main parameters considered in the project are:
+
+- **Roll**
+- **Pitch**
+- **Speed**
+- **Distance**
+
+Roll and pitch represent the drone's orientation, while speed and distance provide information about its movement and surrounding environment.
+
+The sensor data is continuously provided to the control and decision-making modules.
+
+---
+
+## 6.2 ROLL AND PITCH MONITORING
+
+### Roll
+
+Roll represents the tilting of the drone from one side to another.
+
+If the roll angle deviates significantly from the desired value, the drone may become unstable. Therefore, the system continuously monitors roll and attempts to bring it back toward the desired orientation.
+
+### Pitch
+
+Pitch represents the forward or backward tilting of the drone.
+
+A large pitch deviation can indicate that the drone is moving away from its stable orientation.
+
+The current roll and pitch values are continuously monitored and used by the stabilization and safety modules.
+
+---
+
+## 6.3 PID SELF-STABILIZATION
+
+Self-stabilization is one of the main components of the project.
+
+The purpose of the PID controller is to maintain the drone close to its desired orientation by reducing the difference between the desired and current attitude.
+
+The attitude error is calculated as:
+
+$$
+e(t)=r(t)-y(t)
+$$
+
+where:
+
+- $r(t)$ = desired attitude
+- $y(t)$ = current attitude
+- $e(t)$ = attitude error
+
+The PID controller generates a corrective control signal:
+
+$$
+u(t)=K_Pe(t)+K_I\int e(t)dt+K_D\frac{de(t)}{dt}
+$$
+
+where:
+
+- $K_P$ = proportional gain
+- $K_I$ = integral gain
+- $K_D$ = derivative gain
+
+### Proportional Term
+
+The proportional term responds to the current error.
+
+A larger error produces a stronger corrective response.
+
+### Integral Term
+
+The integral term considers the accumulated error over time.
+
+It helps reduce persistent or steady-state error.
+
+### Derivative Term
+
+The derivative term considers how quickly the error is changing.
+
+It helps reduce sudden changes and improves the stability of the response.
+
+### PID Control Flow
+
+```text
+Desired Attitude
+       |
+       v
+Compare with Current Attitude
+       |
+       v
+Calculate Error
+       |
+       v
+PID Controller
+       |
+       v
+Control Correction
+       |
+       v
+Drone
+       |
+       +---------- Feedback ----------+
+                                      |
+                                      v
+                               PID Controller
 SAFE
 UNSAFE
