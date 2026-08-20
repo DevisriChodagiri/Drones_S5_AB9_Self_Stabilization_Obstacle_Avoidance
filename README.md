@@ -108,22 +108,70 @@ The complete system operates through the following sequence:
    After the obstacle is cleared, the drone returns to forward flight.
    ---
    ---
-
 # 7. RESULTS
 
-The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was evaluated through a series of simulations and tests.
+The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was tested by evaluating the individual modules and their integrated behavior. The results demonstrate the performance of the machine learning safety prediction, PID-based stabilization, obstacle avoidance, and recovery control mechanisms.
 
-The major modules evaluated during testing are:
+## 7.1 ML-Based Safe/Unsafe Prediction
 
-- PID-based self-stabilization
-- Machine Learning-based SAFE prediction
-- Machine Learning-based UNSAFE prediction
-- High-attitude / instability detection
-- Recovery controller
-- Obstacle detection
-- Obstacle avoidance
-- Return to forward flight
-- Complete drone simulation
+The Logistic Regression model was used to classify the current drone flight condition as **SAFE** or **UNSAFE**. The model takes parameters such as distance, speed, roll, and pitch as input and predicts whether the current flight condition is suitable for safe operation.
 
-The results obtained from these modules are presented below.
----
+The testing results demonstrate that the trained model can distinguish between safe and potentially unsafe drone states based on the given flight parameters.
+
+**Figure 1: ML-based Safe/Unsafe prediction result**
+
+<!-- Add ML result image here -->
+![ML Safe/Unsafe Prediction](<img width="851" height="245" alt="ml_prediction_safe" src="https://github.com/user-attachments/assets/df83052a-f5f1-4b68-845c-67ea42fe6b3a" />)(<img width="482" height="222" alt="ml_prediction_unsafe" src="https://github.com/user-attachments/assets/86fb111d-3269-40b9-97a5-9ff11cdd16b9" />
+)
+
+
+## 7.2 PID Stabilization Result
+
+The PID controller was implemented to maintain the drone's desired orientation during flight. The controller continuously monitors the roll and pitch values and calculates corrective responses whenever the drone deviates from its desired orientation.
+
+The simulation results show that the controller reduces attitude deviations and brings the drone back toward a stable orientation. This demonstrates the ability of the PID controller to maintain self-stabilization during flight.
+
+**Figure 2: PID-based drone stabilization result**
+
+<!-- Add PID stabilization image here -->
+![PID Stabilization Result](<img width="1477" height="275" alt="PID_Stabilization_Result" src="https://github.com/user-attachments/assets/04d6818c-0f29-4528-9a78-2982bca23a5a" />)
+
+
+## 7.3 Obstacle Avoidance Result
+
+The ultrasonic sensor simulation was used to measure the distance between the drone and an obstacle. When the measured distance decreases below the defined safety threshold, the obstacle avoidance mechanism is activated.
+
+The drone changes its flight behavior to avoid the detected obstacle instead of continuing its normal forward flight. After the obstacle is sufficiently cleared, the system can return toward its normal forward-flight behavior.
+
+**Figure 3: Obstacle detection and avoidance result**
+
+<!-- Add obstacle avoidance image here -->
+![Obstacle Avoidance Result](<img width="881" height="547" alt="Obstacle_Avoidance_Result" src="https://github.com/user-attachments/assets/45ac078e-22d9-44a8-b12d-51150bfcaa00" />)
+
+
+## 7.4 Recovery Control Result
+
+The recovery controller is activated when the drone experiences a large roll or pitch deviation and becomes unstable. The controller applies corrective actions to reduce the attitude error and restore the drone to a stable state.
+
+The simulation results show the roll and pitch values progressively decreasing toward the stable region during recovery. This demonstrates that the recovery controller can respond to unstable flight conditions and attempt to restore stable flight.
+
+**Figure 4: Recovery controller response**
+
+<!-- Add recovery control image here -->
+![Recovery Control Result](<img width="1201" height="591" alt="Recovery_Controller_Result" src="https://github.com/user-attachments/assets/c5c8394c-2902-47ae-9170-54435acdef1a" />)
+
+
+
+
+
+## 7.6 Overall Results
+
+The experimental and simulation results demonstrate that the proposed system can:
+
+- Predict whether a flight condition is **SAFE or UNSAFE** using Logistic Regression.
+- Maintain drone orientation using **PID-based stabilization**.
+- Detect obstacles using distance measurements and initiate **obstacle avoidance**.
+- Detect significant attitude deviations and activate the **recovery controller**.
+- Integrate all the modules into an autonomous flight-control framework.
+
+Overall, the results indicate that the proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** provides a combined approach for improving drone stability, obstacle awareness, and flight safety.
