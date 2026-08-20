@@ -121,7 +121,8 @@ The testing results demonstrate that the trained model can distinguish between s
 **Figure 1: ML-based Safe/Unsafe prediction result**
 
 <!-- Add ML result image here -->
-![ML Safe/Unsafe Prediction](<img width="851" height="245" alt="ml_prediction_safe" src="https://github.com/user-attachments/assets/df83052a-f5f1-4b68-845c-67ea42fe6b3a" />)(<img width="482" height="222" alt="ml_prediction_unsafe" src="https://github.com/user-attachments/assets/86fb111d-3269-40b9-97a5-9ff11cdd16b9" />
+<img width="851" height="245" alt="ml_prediction_safe" src="https://github.com/user-attachments/assets/af836e16-d887-4fc4-9138-0c93c44bead5" />
+(<img width="482" height="222" alt="ml_prediction_unsafe" src="https://github.com/user-attachments/assets/86fb111d-3269-40b9-97a5-9ff11cdd16b9" />
 )
 
 
@@ -134,7 +135,7 @@ The simulation results show that the controller reduces attitude deviations and 
 **Figure 2: PID-based drone stabilization result**
 
 <!-- Add PID stabilization image here -->
-![PID Stabilization Result](<img width="1477" height="275" alt="PID_Stabilization_Result" src="https://github.com/user-attachments/assets/04d6818c-0f29-4528-9a78-2982bca23a5a" />)
+(<img width="1477" height="275" alt="PID_Stabilization_Result" src="https://github.com/user-attachments/assets/04d6818c-0f29-4528-9a78-2982bca23a5a" />)
 
 
 ## 7.3 Obstacle Avoidance Result
@@ -146,7 +147,7 @@ The drone changes its flight behavior to avoid the detected obstacle instead of 
 **Figure 3: Obstacle detection and avoidance result**
 
 <!-- Add obstacle avoidance image here -->
-![Obstacle Avoidance Result](<img width="881" height="547" alt="Obstacle_Avoidance_Result" src="https://github.com/user-attachments/assets/45ac078e-22d9-44a8-b12d-51150bfcaa00" />)
+(<img width="881" height="547" alt="Obstacle_Avoidance_Result" src="https://github.com/user-attachments/assets/45ac078e-22d9-44a8-b12d-51150bfcaa00" />)
 
 
 ## 7.4 Recovery Control Result
@@ -158,7 +159,7 @@ The simulation results show the roll and pitch values progressively decreasing t
 **Figure 4: Recovery controller response**
 
 <!-- Add recovery control image here -->
-![Recovery Control Result](<img width="1201" height="591" alt="Recovery_Controller_Result" src="https://github.com/user-attachments/assets/c5c8394c-2902-47ae-9170-54435acdef1a" />)
+(<img width="1201" height="591" alt="Recovery_Controller_Result" src="https://github.com/user-attachments/assets/c5c8394c-2902-47ae-9170-54435acdef1a" />)
 
 
 
