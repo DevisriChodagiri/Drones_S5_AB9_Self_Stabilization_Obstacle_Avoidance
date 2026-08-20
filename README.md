@@ -108,8 +108,10 @@ The complete system operates through the following sequence:
 7. **Obstacle Avoidance**  
    If an obstacle is detected, the drone enters avoidance mode.
 
-8. **Return to Forward Flight**  
+8. **Return to Forward Flight**
    After the obstacle is cleared, the drone returns to forward flight.
+
+   
    ---
    ---
 # 7. RESULTS
@@ -169,7 +171,7 @@ The simulation results show the roll and pitch values progressively decreasing t
 
 
 
-## 7.6 Overall Results
+## 7.5 Overall Results
 
 The experimental and simulation results demonstrate that the proposed system can:
 
