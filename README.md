@@ -79,45 +79,39 @@ The proposed system consists of multiple modules that work together to provide a
 
 The major stages of the methodology are:
 
-```text
-                    DRONE
-                      |
-                      v
-              SENSOR MONITORING
-                      |
-          +-----------+-----------+
-          |                       |
-      Roll / Pitch             Distance
-          |                       |
-          v                       v
-   PID STABILIZATION       OBSTACLE DETECTION
-          |
-          v
-   ML SAFETY PREDICTION
-          |
-      +---+---+
-      |       |
-    SAFE    UNSAFE
-              |
-              v
-       HIGH-ATTITUDE
-          DETECTION
-              |
-              v
-          RECOVERY
-              |
-              v
-       STABLE FLIGHT
-              |
-              v
-      OBSTACLE AVOIDANCE
-              |
-              v
-      FORWARD FLIGHT
----
+### Complete System Operation
+
+The complete system operates through the following sequence:
+
+1. **Sensor Monitoring**  
+   The drone continuously monitors roll, pitch, speed, and distance.
+
+2. **PID Stabilization**  
+   Roll and pitch deviations are corrected using the PID controller.
+
+3. **Machine Learning Safety Prediction**  
+   The Logistic Regression model classifies the current flight condition as SAFE or UNSAFE.
+
+4. **Instability Detection**  
+   If the drone reaches an unsafe attitude, the high-attitude detection mechanism is activated.
+
+5. **Recovery Control**  
+   The recovery controller reduces the attitude deviation and brings the drone toward a stable state.
+
+6. **Obstacle Detection**  
+   The distance measurement is continuously checked for obstacles.
+
+7. **Obstacle Avoidance**  
+   If an obstacle is detected, the drone enters avoidance mode.
+
+8. **Return to Forward Flight**  
+   After the obstacle is cleared, the drone returns to forward flight.
+   ---
+   ---
+
 # 7. RESULTS
 
-The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was tested by evaluating the individual modules and their integrated behavior.
+The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was evaluated through a series of simulations and tests.
 
 The major modules evaluated during testing are:
 
@@ -132,63 +126,4 @@ The major modules evaluated during testing are:
 - Complete drone simulation
 
 The results obtained from these modules are presented below.
-
 ---
-
-## 7.1 PID SELF-STABILIZATION RESULT
-
-The PID controller was tested to verify the self-stabilization capability of the drone.
-
-The controller continuously monitors the drone's roll and pitch and compares the current attitude with the desired attitude. Based on the error, the PID controller generates a corrective response.
-
-### Figure 1: PID Stabilization Result
-
-**[ADD PID STABILIZATION SCREENSHOT HERE]**
-
-**File:** `PID_Stabilization_Result.png`
-
-> **Figure 1:** PID-based self-stabilization result.
-
-### Observation
-
-The PID controller reduces the deviation between the desired and current attitude of the drone.
-
-The stabilization mechanism continuously provides corrective action to maintain the drone closer to its desired orientation.
-
-**[ADD SPECIFIC OBSERVATION FROM THE FINAL SCREENSHOT HERE]**
-
----
-
-## 7.2 MACHINE LEARNING - SAFE PREDICTION
-
-The Logistic Regression model was tested using flight parameters consisting of:
-
-- Distance
-- Speed
-- Roll
-- Pitch
-
-The model predicts whether the given flight condition is SAFE or UNSAFE.
-
-### Figure 2: SAFE Prediction Result
-
-**[ADD SAFE ML SCREENSHOT HERE]**
-
-**File:** `ml_prediction_safe.png`
-
-> **Figure 2:** Machine Learning prediction for a SAFE flight condition.
-
-### Test Input
-
-| Parameter | Value |
-|---|---:|
-| Distance | 50 |
-| Speed | 5 |
-| Roll | 5 |
-| Pitch | 6 |
-
-### Prediction
-
-```text
-Prediction: 1
-RESULT: SAFE
