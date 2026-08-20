@@ -28,13 +28,13 @@
 
 ---
 
-# TITLE
+## TITLE
 
-## Autonomous Self-Stabilizing Drone with Obstacle Avoidance
+### Autonomous Self-Stabilizing Drone with Obstacle Avoidance
 
 ---
 
-# ABSTRACT
+## ABSTRACT
 
 Autonomous drones require stability, environmental awareness, and safe decision-making to operate effectively without continuous human intervention. A drone may become unstable due to changes in its roll and pitch, while obstacles in its flight path can lead to collisions.
 
@@ -52,7 +52,7 @@ The complete system is developed and evaluated using **MATLAB/Simulink** and **P
 
 ---
 
-# INTRODUCTION
+## INTRODUCTION
 
 Drones are increasingly being used in surveillance, agriculture, inspection, delivery, mapping, disaster management, and autonomous navigation.
 
@@ -77,13 +77,13 @@ The system continuously monitors the drone's condition and responds according to
 
 ---
 
-# METHODOLOGY
+## METHODOLOGY
 
 The proposed system consists of multiple modules that work together to provide autonomous and safe drone operation.
 
 The major stages of the methodology are:
 
-### Complete System Operation
+#### Complete System Operation
 
 The complete system operates through the following sequence:
 
@@ -114,11 +114,11 @@ The complete system operates through the following sequence:
    
    ---
    ---
-# 7. RESULTS
+## 7. RESULTS
 
 The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was tested by evaluating the individual modules and their integrated behavior. The results demonstrate the performance of the machine learning safety prediction, PID-based stabilization, obstacle avoidance, and recovery control mechanisms.
 
-## 7.1 ML-Based Safe/Unsafe Prediction
+### 7.1 ML-Based Safe/Unsafe Prediction
 
 The Logistic Regression model was used to classify the current drone flight condition as **SAFE** or **UNSAFE**. The model takes parameters such as distance, speed, roll, and pitch as input and predicts whether the current flight condition is suitable for safe operation.
 
@@ -132,7 +132,7 @@ The testing results demonstrate that the trained model can distinguish between s
 )
 
 
-## 7.2 PID Stabilization Result
+### 7.2 PID Stabilization Result
 
 The PID controller was implemented to maintain the drone's desired orientation during flight. The controller continuously monitors the roll and pitch values and calculates corrective responses whenever the drone deviates from its desired orientation.
 
@@ -144,7 +144,7 @@ The simulation results show that the controller reduces attitude deviations and 
 (<img width="1477" height="275" alt="PID_Stabilization_Result" src="https://github.com/user-attachments/assets/04d6818c-0f29-4528-9a78-2982bca23a5a" />)
 
 
-## 7.3 Obstacle Avoidance Result
+### 7.3 Obstacle Avoidance Result
 
 The ultrasonic sensor simulation was used to measure the distance between the drone and an obstacle. When the measured distance decreases below the defined safety threshold, the obstacle avoidance mechanism is activated.
 
@@ -156,7 +156,7 @@ The drone changes its flight behavior to avoid the detected obstacle instead of 
 (<img width="881" height="547" alt="Obstacle_Avoidance_Result" src="https://github.com/user-attachments/assets/45ac078e-22d9-44a8-b12d-51150bfcaa00" />)
 
 
-## 7.4 Recovery Control Result
+### 7.4 Recovery Control Result
 
 The recovery controller is activated when the drone experiences a large roll or pitch deviation and becomes unstable. The controller applies corrective actions to reduce the attitude error and restore the drone to a stable state.
 
@@ -171,7 +171,7 @@ The simulation results show the roll and pitch values progressively decreasing t
 
 
 
-## 7.5 Overall Results
+### 7.5 Overall Results
 
 The experimental and simulation results demonstrate that the proposed system can:
 
@@ -184,7 +184,7 @@ The experimental and simulation results demonstrate that the proposed system can
 Overall, the results indicate that the proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** provides a combined approach for improving drone stability, obstacle awareness, and flight safety.
 
 ---
-# 8. CONCLUSION
+## 8. CONCLUSION
 
 The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was successfully designed and evaluated using MATLAB/Simulink and machine learning techniques. The system combines **PID-based attitude stabilization, ultrasonic-based obstacle detection, obstacle avoidance, recovery control, and Logistic Regression-based safety prediction** into a unified autonomous flight-control framework.
 
@@ -195,7 +195,7 @@ The simulation results demonstrate that the individual modules and their integra
 Overall, this project demonstrates how **control systems, sensor-based decision-making, simulation, and machine learning** can be combined to develop a more reliable autonomous drone system. Future work can focus on real-time hardware implementation, additional sensors, more advanced machine learning models, and testing under real-world flight conditions.
 
 ---
-# 9. REFERENCES
+## 9. REFERENCES
 
 1. López-Sánchez, I., & Moreno-Valenzuela, J. (2023).  
    **PID Control of Quadrotor UAVs: A Survey.**  
