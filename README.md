@@ -16,7 +16,7 @@
 
 ---
 
-# TEAM MEMBER DETAILS
+## TEAM MEMBER DETAILS
 
 | S.No. | Name | Roll Number | Email |
 |---|---|---|---|
