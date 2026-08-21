@@ -48,7 +48,7 @@ When the drone reaches an unsafe attitude condition, the high-attitude detection
 
 An ultrasonic distance measurement is used to detect obstacles in the drone's path. When an obstacle is detected, the drone enters obstacle avoidance mode. After the obstacle is cleared, the system returns the drone to forward flight.
 
-The complete system is developed and evaluated using **MATLAB/Simulink** and **Python-based Machine Learning components**.
+The complete system is developed and evaluated using **Simulink** and **Python-based Machine Learning components**.
 
 ---
 
