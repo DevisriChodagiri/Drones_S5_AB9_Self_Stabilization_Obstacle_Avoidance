@@ -186,7 +186,7 @@ Overall, the results indicate that the proposed **Autonomous Self-Stabilizing Dr
 ---
 ## 8. CONCLUSION
 
-The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was successfully designed and evaluated using MATLAB/Simulink and machine learning techniques. The system combines **PID-based attitude stabilization, ultrasonic-based obstacle detection, obstacle avoidance, recovery control, and Logistic Regression-based safety prediction** into a unified autonomous flight-control framework.
+The proposed **Autonomous Self-Stabilizing Drone with Obstacle Avoidance** was successfully designed and evaluated using Simulink and machine learning techniques. The system combines **PID-based attitude stabilization, ultrasonic-based obstacle detection, obstacle avoidance, recovery control, and Logistic Regression-based safety prediction** into a unified autonomous flight-control framework.
 
 The PID controller helps maintain the drone's roll and pitch stability during flight, while the ultrasonic sensor enables the system to detect obstacles and initiate appropriate avoidance actions. When significant attitude deviations occur, the recovery controller is activated to bring the drone back toward a stable condition. In addition, the Logistic Regression model classifies the current flight condition as **SAFE or UNSAFE** based on important flight parameters such as distance, speed, roll, and pitch.
 
