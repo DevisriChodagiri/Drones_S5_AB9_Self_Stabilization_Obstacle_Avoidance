@@ -1,8 +1,8 @@
-# Python dependencies for the Self-Stabilizing Drone Safety project
-
+```text
+pybullet==3.2.6
 numpy
 pandas
 scikit-learn
-pybullet
 matplotlib
 joblib
+```
